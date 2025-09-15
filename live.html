@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>البث المباشر</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
@@ -18,42 +18,50 @@
         <li><a href="quran.html">المصحف</a></li>
         <li><a href="recitations.html">التلاوات</a></li>
         <li><a href="azkar.html">الأذكار</a></li>
-        <li><a href="favorites.html">المفضلة</a></li>
-        <li><a href="tasbeeh.html">التسبيح</a></li>
-        <li><a href="media.html">المكتبة</a></li>
-        <li><a href="mosque.html">وضع المسجد</a></li>
       </ul>
-      <div class="nav-tools">
-        <button id="toggle-theme" title="الوضع الليلي/النهاري">🌙</button>
-      </div>
+      <div class="nav-tools"><button id="toggle-theme">🌙</button></div>
     </nav>
   </header>
 
-  <main class="container page bg-live">
-    <section class="bg-live">
+  <main class="container page">
+    <section>
       <h2>📻 البث المباشر</h2>
 
-      <!-- إذاعة القرآن الكريم المصرية (صوت) -->
-      <div class="player-card">
-        <div class="player-header">إذاعة القرآن الكريم المصرية — تشغيل مباشر داخل الموقع</div>
-        <audio id="egypt-radio" controls preload="none" style="width:100%"></audio>
-        <small class="muted">لو لم يبدأ تلقائيًا، اضغط زر التشغيل ▶️</small>
+      <!-- إذاعة القرآن الكريم المصرية -->
+      <div class="player-card card">
+        <div class="player-header">إذاعة القرآن الكريم المصرية — تشغيل داخل الموقع</div>
+
+        <!-- بوابة تشغيل للموبايل -->
+        <div class="playgate" data-target="egypt-radio">
+          <span class="muted">تحتاج ضغطة تشغيل على الموبايل</span>
+          <button class="start-play">ابدأ التشغيل</button>
+        </div>
+
+        <audio id="egypt-radio" preload="none" controls playsinline style="width:100%"></audio>
+        <small class="muted">لو لم يبدأ: اضغط “ابدأ التشغيل” أو زر ▶️</small>
       </div>
 
-      <!-- بث الحرم المكي (مرئي) -->
-      <div class="player-card">
-        <div class="player-header">بث من الحرم المكي (قناة القرآن السعودية) — تشغيل مرئي داخل الموقع</div>
-        <video id="makkah-hls" controls playsinline style="width:100%;max-height:480px;background:#000"></video>
-        <small class="muted">نستخدم HLS. إن لم يعمل على متصفحك جرّب Safari أو Chrome محدث.</small>
+      <!-- بث الحرم (HLS) -->
+      <div class="player-card card">
+        <div class="player-header">بث الحرم المكي (قناة القرآن السعودية)</div>
+
+        <div class="playgate" data-target="makkah-hls">
+          <span class="muted">قد يتطلب ضغطة تشغيل على iOS/Android</span>
+          <button class="start-play">ابدأ التشغيل</button>
+        </div>
+
+        <video id="makkah-hls" controls playsinline webkit-playsinline
+               preload="metadata" muted
+               style="width:100%;max-height:54dvh"></video>
+        <small class="muted">يُفضّل Safari على iOS و Chrome حديث على Android.</small>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="container"><small>© 2025 - موقع القرآن الكريم</small></div></footer>
+  <footer class="container" style="padding-block:20px"><small>© 2025</small></footer>
 
-  <!-- مكتبة hls.js لدعم HLS -->
+  <!-- hls.js ضروري لغير Safari -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.min.js"></script>
-  <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
