@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>التلاوات</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -26,28 +24,51 @@
         <li><a href="mosque.html">وضع المسجد</a></li>
       </ul>
       <div class="nav-tools">
-        <input id="global-search" type="search" placeholder="ابحث عن آية، ذكر، أو وقت صلاة" />
-        <button id="bg-audio-toggle" title="تشغيل/إيقاف الخلفية">▶️</button>
         <button id="toggle-theme" title="الوضع الليلي/النهاري">🌙</button>
       </div>
     </nav>
   </header>
-  <audio id="bg-audio" loop class="hidden"></audio>
-  <main class="container page">
 
-<section class="bg-live">
-  <h2>🎧 التلاوات</h2>
-  <div class="card">للاستماع الكامل، مصادر مباشرة:
-    <a target="_blank" href="https://qurancentral.com/audio/fares-abbad/">فارس عباد</a> •
-    <a target="_blank" href="https://qurancentral.com/audio/maher-al-mueaqly/">ماهر المعيقلي</a> •
-    <a target="_blank" href="https://quran.com/en/reciters/2">عبد الباسط</a>
-  </div>
-  <div id="reciters" class="reciters"></div>
-  <div id="reciter-surahs" class="reciter-surahs hidden"></div>
-</section>
+  <main class="container page bg-live">
+    <section class="bg-live">
+      <h2>🎧 التلاوات (تشغيل داخلي)</h2>
 
+      <div class="card" style="display:grid;gap:8px">
+        <div style="display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+          <div>
+            <label>القارئ</label>
+            <select id="reciter-select">
+              <option value="ar.faresabbad">فارس عباد</option>
+              <option value="ar.mahermuaiqly">ماهر المعيقلي</option>
+              <option value="ar.abdulbasitmurattal">عبد الباسط (مرتل)</option>
+              <option value="ar.alafasy">مشاري العفاسي</option>
+            </select>
+          </div>
+
+          <div>
+            <label>السورة</label>
+            <select id="surah-audio-select"></select>
+          </div>
+
+          <div>
+            <label>الجودة</label>
+            <select id="bitrate-select">
+              <option value="128">128 kbps</option>
+              <option value="64">64 kbps</option>
+              <option value="32">32 kbps</option>
+            </select>
+          </div>
+        </div>
+
+        <audio id="surah-player" controls style="width:100%"></audio>
+        <div class="muted">يتم الجلب مباشرة من CDN موثوق: Islamic Network (لا روابط خارجية).</div>
+      </div>
+    </section>
   </main>
+
   <footer class="footer"><div class="container"><small>© 2025 - موقع القرآن الكريم</small></div></footer>
+
   <script src="data.js"></script>
   <script src="main.js"></script>
-</body></html>
+</body>
+</html>
