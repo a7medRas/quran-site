@@ -1,59 +1,117 @@
+/* ========== أساسيات عامة ========== */
+:root{
+  --green:#167d53;
+  --gold:#d4af37;
+  --bg:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --card:#f8fafc;
+}
 
-:root{ --green:#0b6b3a; --gold:#d4af37; --bg:#f9fafb; --text:#1f2937; --card:#ffffff; --muted:#6b7280; }
-:root[data-palette="green"]{ --green:#0b6b3a; --gold:#d4af37; }
-:root[data-palette="blue"]{ --green:#1f4ea3; --gold:#a0b3ff; }
-:root[data-palette="gold"]{ --green:#8a6d1d; --gold:#ffd166; }
+body.dark{
+  --bg:#0b1220;
+  --text:#f1f5f9;
+  --muted:#94a3b8;
+  --card:#101826;
+}
+
+html,body{height:100%;}
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{ font-family:'Cairo',system-ui; background:var(--bg); color:var(--text); line-height:1.7; }
-body.dark{ --bg:#0b0f12; --text:#e5e7eb; --card:#0f151a; --muted:#9ca3af; }
-.container{max-width:1100px;margin:auto;padding:16px}
-.topbar{position:sticky;top:0;z-index:10;background:linear-gradient(90deg,var(--green),var(--gold));color:#fff}
-.navbar{display:flex;align-items:center;gap:12px}
-.brand-link{color:#fff;text-decoration:none;font-weight:800}
-.nav-list{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
-.nav-list a{color:#fff;text-decoration:none;font-weight:600;opacity:.95}
-.nav-list a:hover{text-decoration:underline}
-.nav-tools{margin-inline-start:auto;display:flex;align-items:center;gap:8px}
-.nav-tools input{padding:8px;border-radius:10px;border:none;min-width:220px}
-.nav-tools button{border:none;border-radius:10px;padding:8px 10px;cursor:pointer}
-.footer{padding:20px 0;color:var(--muted);text-align:center}
-.page{padding-block:22px}
-.hero{background-image:radial-gradient(ellipse at top,var(--gold) 0%,transparent 35%),radial-gradient(ellipse at bottom,var(--green) 0%,transparent 35%);border-radius:24px;padding:32px;margin-top:10px}
-.hero h1{margin:0 0 6px}
-.muted{color:var(--muted)}
-.quick-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-.card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:16px 18px;text-decoration:none;color:inherit;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-.card:hover{transform:translateY(-2px);transition:.2s}
-.date-time{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:12px}
-.prayer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px}
-.prayer-card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:14px;text-align:center}
-.next-athan{margin-top:20px;background:var(--card);padding:16px;border-radius:16px;border:1px solid #e5e7eb;text-align:center}
-.player-card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:16px;margin:12px 0}
-.player-header{font-weight:700;margin-bottom:8px}
-.quran .quran-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.mushaf{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:18px;line-height:2.2;font-size:22px}
-.ayah{display:block;margin:10px 0;padding:6px;border-radius:10px}
-.ayah.active{outline:2px dashed var(--gold);background:rgba(212,175,55,.08)}
-.reciters{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px}
-.reciter-card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:16px}
-.surah-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.surah-item{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:10px;display:flex;justify-content:space-between;align-items:center}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-.tab{background:var(--card);border:1px solid #e5e7eb;border-radius:12px;padding:8px 12px;cursor:pointer}
-.tab.active{border-color:var(--gold)}
-.azkar-list .zekr{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:12px;margin:10px 0}
-.zekr-tools{display:flex;gap:8px;margin-top:8px;align-items:center}
-.counter{display:inline-flex;gap:6px;align-items:center}
-.counter input{width:64px;text-align:center;padding:6px;border-radius:10px;border:1px solid #e5e7eb;background:var(--bg);color:inherit}
-.fav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.fav-card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:12px}
-.fav-actions{display:flex;gap:8px;margin-top:12px}
-.hidden{display:none}
-/* Backgrounds */
-body.bg-quran .hero, .bg-quran .mushaf { background-image:url('bg-quran.svg'), radial-gradient(#fff, transparent); background-repeat:no-repeat; background-size:cover; }
-body.bg-azkar .page{ background-image:url('bg-azkar.svg'); background-size:cover; background-blend-mode:soft-light; }
-body.bg-live .page{ background-image:url('bg-live.svg'); background-size:cover; background-blend-mode:soft-light; }
-body.bg-mosque .page{ background-image:url('bg-mosque.svg'); background-size:cover; background-blend-mode:soft-light; }
-.settings-panel h3{margin-top:0}
-@media (max-width:600px){ .nav-tools input{min-width:140px} }
+html{font-family:'Cairo', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img,video{max-width:100%;height:auto;}
+
+/* ========== حاوية مرنة ========== */
+.container{width:100%;max-width:1100px;margin-inline:auto;padding:clamp(10px,2vw,20px);}
+
+/* ========== شريط علوي ========== */
+.topbar{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid #e5e7eb;}
+.navbar{display:flex;align-items:center;gap:10px;}
+.brand-link{font-weight:800;font-size:clamp(18px,4vw,24px);color:var(--green)}
+.nav-list{
+  display:flex;gap:10px;list-style:none;margin:0;padding:0;
+  overflow:auto hidden;scrollbar-width:none;-ms-overflow-style:none;
+}
+.nav-list::-webkit-scrollbar{display:none}
+.nav-list a{display:inline-block;padding:8px 10px;border-radius:10px;white-space:nowrap}
+.nav-list a:hover{background:rgba(0,0,0,.06)}
+.nav-tools{margin-inline-start:auto}
+#toggle-theme{border:0;background:transparent;font-size:20px;cursor:pointer}
+
+/* ========== بطاقات + أقسام ========== */
+.page{min-height:calc(100dvh - 70px);}
+.card{
+  background:var(--card);border:1px solid rgba(0,0,0,.06);
+  border-radius:16px;padding:clamp(10px,2.5vw,16px);
+}
+.muted{color:var(--muted);}
+
+/* ========== شبكات مرنة ========== */
+.prayer-grid{
+  display:grid;gap:10px;
+  grid-template-columns:repeat(1, minmax(0,1fr));
+}
+@media (min-width:600px){ .prayer-grid{grid-template-columns:repeat(2,1fr);} }
+@media (min-width:900px){ .prayer-grid{grid-template-columns:repeat(3,1fr);} }
+
+.player-card{margin-bottom:14px}
+.player-header{font-weight:700;margin-bottom:6px}
+
+/* ========== المصحف ========== */
+.mushaf{
+  background:var(--card);
+  padding:clamp(10px,3vw,18px);
+  border-radius:18px;
+  line-height:2.2;
+  font-size:clamp(18px,4.2vw,24px);
+  word-break:normal;
+  overflow-wrap:anywhere; /* يمنع خروج النص من الشاشة */
+  text-align:justify;
+}
+.ayah{
+  display:block; /* موبايل: كل آية سطر مستقل */
+  margin:0 0 10px 0;
+}
+.ayah small{opacity:.7;font-size:.8em;margin-inline-start:6px}
+
+/* أدوات المصحف */
+.quran-toolbar button,
+.quran-toolbar select,
+.quran-toolbar input{
+  font:inherit;border:1px solid #e5e7eb;background:var(--bg);color:var(--text);
+  border-radius:12px;padding:8px 10px;
+}
+.quran-toolbar{gap:8px}
+
+/* ========== الأذكار ========== */
+.azkar-list{display:grid;gap:10px}
+.zekr{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:12px}
+.zekr .counter{display:flex;align-items:center;gap:6px}
+.zekr .counter input{width:70px;text-align:center}
+
+/* ========== أزرار تشغيل الموبايل ========== */
+.playgate{
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;border:1px dashed #94a3b8;border-radius:12px;padding:10px;
+  background:rgba(148,163,184,.08);
+}
+.playgate button{
+  border:0;border-radius:999px;padding:10px 14px;cursor:pointer;
+  background:var(--green);color:white;font-weight:700;
+}
+
+/* ========== فيديو HLS ========== */
+video{background:#000;border-radius:14px}
+
+/* ========== تصغير الحواف للموبايل ========== */
+@media (max-width:480px){
+  .navbar{flex-wrap:wrap}
+  .nav-tools{order:3;width:100%;display:flex;justify-content:flex-end}
+  .brand{width:100%}
+}
