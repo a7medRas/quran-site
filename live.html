@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>البث المباشر</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -26,38 +24,36 @@
         <li><a href="mosque.html">وضع المسجد</a></li>
       </ul>
       <div class="nav-tools">
-        <input id="global-search" type="search" placeholder="ابحث عن آية، ذكر، أو وقت صلاة" />
-        <button id="bg-audio-toggle" title="تشغيل/إيقاف الخلفية">▶️</button>
         <button id="toggle-theme" title="الوضع الليلي/النهاري">🌙</button>
       </div>
     </nav>
   </header>
-  <audio id="bg-audio" loop class="hidden"></audio>
-  <main class="container page">
 
-<section class="bg-live">
-  <h2>📻 البث المباشر</h2>
-  <p class="muted">يمكنك تشغيل القنوات في الخلفية أثناء التصفح. أضفنا روابط موثوقة تُفتح في تبويب جديد لضمان التشغيل.</p>
-  <div class="player-card">
-    <div class="player-header">إذاعة القرآن الكريم المصرية (قنوات موثوقة)</div>
-    <ul>
-      <li><a target="_blank" href="https://zeno.fm/radio/egypt-quran-radio/">ZenoFM</a></li>
-      <li><a target="_blank" href="https://streema.com/radios/Holy_Quran_Radio">Streema</a></li>
-      <li><a target="_blank" href="https://fmstream.org/ertu-al-quran-al-karim-live">FMStream</a></li>
-    </ul>
-  </div>
-  <div class="player-card">
-    <div class="player-header">بث من الحرم المكي (مرئي/صوت)</div>
-    <ul>
-      <li><a target="_blank" href="https://makkahlive.net/makkahlive.aspx">Makkah Live (Official page)</a></li>
-      <li><a target="_blank" href="https://quran.com/en/radio">Quran.com Radio</a></li>
-    </ul>
-    <small class="muted">تعمل الروابط حتى لو تغير مصدر البث الأصلي.</small>
-  </div>
-</section>
+  <main class="container page bg-live">
+    <section class="bg-live">
+      <h2>📻 البث المباشر</h2>
 
+      <!-- إذاعة القرآن الكريم المصرية (صوت) -->
+      <div class="player-card">
+        <div class="player-header">إذاعة القرآن الكريم المصرية — تشغيل مباشر داخل الموقع</div>
+        <audio id="egypt-radio" controls preload="none" style="width:100%"></audio>
+        <small class="muted">لو لم يبدأ تلقائيًا، اضغط زر التشغيل ▶️</small>
+      </div>
+
+      <!-- بث الحرم المكي (مرئي) -->
+      <div class="player-card">
+        <div class="player-header">بث من الحرم المكي (قناة القرآن السعودية) — تشغيل مرئي داخل الموقع</div>
+        <video id="makkah-hls" controls playsinline style="width:100%;max-height:480px;background:#000"></video>
+        <small class="muted">نستخدم HLS. إن لم يعمل على متصفحك جرّب Safari أو Chrome محدث.</small>
+      </div>
+    </section>
   </main>
+
   <footer class="footer"><div class="container"><small>© 2025 - موقع القرآن الكريم</small></div></footer>
+
+  <!-- مكتبة hls.js لدعم HLS -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.8/dist/hls.min.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
-</body></html>
+</body>
+</html>
