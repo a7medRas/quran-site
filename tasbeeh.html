@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>التسبيح الذكي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <nav class="navbar container">
+      <div class="brand"><a class="brand-link" href="index.html">القرآن الكريم</a></div>
+      <ul class="nav-list">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="prayers.html">توقيتات الصلاة</a></li>
+        <li><a href="live.html">البث المباشر</a></li>
+        <li><a href="quran.html">المصحف</a></li>
+        <li><a href="recitations.html">التلاوات</a></li>
+        <li><a href="azkar.html">الأذكار</a></li>
+        <li><a href="favorites.html">المفضلة</a></li>
+        <li><a href="tasbeeh.html">التسبيح</a></li>
+        <li><a href="media.html">المكتبة</a></li>
+        <li><a href="mosque.html">وضع المسجد</a></li>
+      </ul>
+      <div class="nav-tools">
+        <input id="global-search" type="search" placeholder="ابحث عن آية، ذكر، أو وقت صلاة" />
+        <button id="bg-audio-toggle" title="تشغيل/إيقاف الخلفية">▶️</button>
+        <button id="toggle-theme" title="الوضع الليلي/النهاري">🌙</button>
+      </div>
+    </nav>
+  </header>
+  <audio id="bg-audio" loop class="hidden"></audio>
+  <main class="container page">
+
+<main class="container page bg-azkar">
+  <h2>📿 التسبيح الذكي</h2>
+  <div class="card" style="display:grid;gap:10px;max-width:560px">
+    <label>الذكر المختار</label>
+    <select id="dhikr-select">
+      <option>سبحان الله</option><option>الحمد لله</option><option>الله أكبر</option>
+      <option>لا إله إلا الله</option><option>أستغفر الله</option>
+    </select>
+    <div>العدد الحالي: <strong id="count">0</strong></div>
+    <div>الهدف اليومي: <input id="daily-goal" type="number" value="100" min="1" style="width:120px"> </div>
+    <div style="display:flex;gap:8px">
+      <button id="inc" class="card">زيادة +1</button>
+      <button id="reset" class="card">تصفير</button>
+      <button id="vibrate" class="card">اهتزاز</button>
+    </div>
+    <small class="muted">يتم حفظ العدّ والهدف محليًا لكل ذكر.</small>
+  </div>
+</main>
+
+  </main>
+  <footer class="footer"><div class="container"><small>© 2025 - موقع القرآن الكريم</small></div></footer>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body></html>
